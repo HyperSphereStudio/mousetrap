@@ -287,7 +287,7 @@ pkgconfig.generate(
     name: 'libmousetrap',
     filebase: 'mousetrap',
     description: 'GTK4-based GUI library, backend of Mousetrap.jl',
-    url: 'https://github.com/clemapfel/mousetrap'#,
+    url: 'https://github.com/HyperSphereStudio/mousetrap'#,
     #requires: [OPENGL.name(), GLEW.name(), GTK4.name(), ADWAITA.name()]
 )
 

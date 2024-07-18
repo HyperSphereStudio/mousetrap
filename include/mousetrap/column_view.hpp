@@ -228,6 +228,10 @@ namespace mousetrap
             /// @brief get whether the user can reorder columns by click-dragging
             /// @return true if reorderable, false otherwise
             bool get_is_reorderable() const;
+			
+			/// @brief remove row at index row
+			/// @param row index of row to remove
+			void remove_row(uint64_t row);
 
             /// @brief expose the selection model
             /// @return selection model

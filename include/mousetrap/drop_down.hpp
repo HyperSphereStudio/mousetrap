@@ -127,6 +127,8 @@ namespace mousetrap
             /// @brief remove an item from the drop down
             /// @param id
             void remove(ItemID id);
+			
+			void empty();
 
             /// @brief set whether a downward arrow should be shown next to the currently active label widget
             /// @param b

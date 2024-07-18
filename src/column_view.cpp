@@ -272,6 +272,11 @@ namespace mousetrap
 
         return false;
     }
+	
+	void ColumnView::remove_row(uint64_t row){
+		auto* model = gtk_column_view_get_columns(GTK_COLUMN_VIEW(operator NativeWidget()));
+		g_list_store_remove(model, row);
+	}
 
     uint64_t ColumnView::get_n_columns() const
     {

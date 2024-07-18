@@ -162,7 +162,8 @@ namespace mousetrap
     {
         auto* item = GTK_LIST_ITEM(object);
         auto* dropdown_item = detail::G_DROP_DOWN_ITEM(gtk_list_item_get_item(item));
-        gtk_list_item_set_child(item, dropdown_item->list_widget);
+		if(gtk_widget_get_parent(dropdown_item->list_widget) == NULL)
+			gtk_list_item_set_child(item, dropdown_item->list_widget);
     }
 
     void DropDown::on_list_factory_teardown(GtkSignalListItemFactory* self, void* object, detail::DropDownInternal* internal)
@@ -174,7 +175,8 @@ namespace mousetrap
     {
         auto* item = GTK_LIST_ITEM(object);
         auto* dropdown_item = detail::G_DROP_DOWN_ITEM(gtk_list_item_get_item(item));
-        gtk_list_item_set_child(item, dropdown_item->label_widget);
+		if(gtk_widget_get_parent(dropdown_item->label_widget) == NULL)
+			gtk_list_item_set_child(item, dropdown_item->label_widget);
     }
 
     void DropDown::on_label_factory_teardown(GtkSignalListItemFactory* self, void* object, detail::DropDownInternal* internal)
@@ -208,6 +210,10 @@ namespace mousetrap
             }
         }
     }
+	
+	void DropDown::empty(){
+		gtk_list_store_clear(_internal->model);
+	}
 
     void DropDown::set_always_show_arrow(bool b)
     {

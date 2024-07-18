@@ -212,7 +212,7 @@ namespace mousetrap
     }
 	
 	void DropDown::empty(){
-		gtk_list_store_clear(_internal->model);
+		g_list_store_remove_all(_internal->model);
 	}
 
     void DropDown::set_always_show_arrow(bool b)

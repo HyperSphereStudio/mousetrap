@@ -273,7 +273,7 @@ namespace mousetrap
         return false;
     }
 	
-	void ColumnView::remove_row(uint64_t row){
+	void ColumnView::remove_row(int32_t row){
 		g_list_store_remove(_internal->list_store, row);
 	}
 

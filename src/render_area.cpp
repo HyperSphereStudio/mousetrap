@@ -108,9 +108,8 @@ namespace mousetrap
             return detail::GL_CONTEXT;
         }
 
-        void shutdown_opengl()
-        {
-            while (GDK_IS_GL_CONTEXT(GL_CONTEXT))
+        void shutdown_opengl(){
+            while (!is_opengl_disabled())
                 g_object_unref(GL_CONTEXT);
 
             GL_CONTEXT = nullptr;

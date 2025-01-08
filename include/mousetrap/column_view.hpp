@@ -231,7 +231,7 @@ namespace mousetrap
 			
 			/// @brief remove row at index row
 			/// @param row index of row to remove
-			void remove_row(uint64_t row);
+			void remove_row(int32_t row);
 
             /// @brief expose the selection model
             /// @return selection model

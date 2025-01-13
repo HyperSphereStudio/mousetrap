@@ -109,7 +109,7 @@ namespace mousetrap
         }
 
         void shutdown_opengl(){
-            while(GDK_IS_GL_CONTEXT(GL_CONTEXT))
+            if(GDK_IS_GL_CONTEXT(GL_CONTEXT))
                 g_object_unref(GL_CONTEXT);
 
             GL_CONTEXT = nullptr;
